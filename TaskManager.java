@@ -27,7 +27,7 @@ public class TaskManager {
         List<String> strings = StringHelper.splitOnSentences(data);
         List<String> words = new ArrayList<>();
 
-        Pattern pattern = Pattern.compile("\\w+(?=\\s+\\w*\\p{Punct}*\\s*\\.)");
+        Pattern pattern = Pattern.compile("\\w+(?=\\s*\\p{Punct}*\\s+\\w+\\p{Punct}*\\s*[.?!])");
 
         for (String item : strings) {
             Matcher mat = pattern.matcher(item);
